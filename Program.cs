@@ -1,21 +1,24 @@
 ﻿using System;
 
-namespace SwapingNumber
+namespace Fibonacci_Series
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int a = 10;
-            int b = 20;
-            int temp = 0;
+            int currnum = 0;
+            int prevnum = 1;
 
-            temp = a;
-            a = b;
-            b = temp;
+            Console.WriteLine("Enter Number: ");
+            var number = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("a : " + a);
-            Console.WriteLine("b : " + b);
+            for (int i = 0; i <= number; i++)
+            {
+                int sum = currnum + prevnum;
+                currnum = prevnum;
+                prevnum = sum;
+                Console.WriteLine("Fibonacci Series : " + prevnum);
+            }
         }
     }
 }
